@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>DAY1</h2>
+
+    <h5>1.Difference between “ == “ and “ === “ operators.</h5>
+    <pre>Ans. The main difference between the == and === operator in javascript is that
+     the == operator does the type conversion of the operands before comparison,
+     whereas the === operator compares the values as well as the data types of the operands.</pre>
+    <h5>2.What is the spread operator?</h5>
+    <pre>Ans. The JavaScript spread operator ( ... ) allows us to quickly copy all or part of an existing array or object into another array or object.</pre>
+
+    <h5>3.What are the differences between var, let and const?</h5>
+    <pre>Ans. let: The let keyword declares a block-scoped local variable, optionally initializing it to a value.
+          Block-scoped means that the variable is only available within the block it was declared in, which is usually denoted by curly braces {}.
+
+     var: The var keyword declares a function-scoped or global variable, optionally initializing it to a value.
+          Function-scoped means that the variable is only available within the function it was declared in. Global variables are available throughout your entire code.
+
+
+     const: The const keyword declares a block-scoped, immutable constant variable, i.e. a variable that can’t be reassigned.
+            Constants are also called “immutable variables”, but that’s a bit of a misnomer since they are actually variables – just ones that can’t be reassigned.
+    </pre> 
+    
+    <h5>4.What is execution context</h5>
+    <pre>Ans. The Execution Context contains the code that's currently running, and everything 
+     that aids in its execution. During the Execution Context run-time, the specific code gets parsed by a parser,
+     the variables and functions are stored in memory, executable byte-code gets generated, and the code gets executed.</pre>
+
+    <h5>5.What is meant by first class functions</h5>
+    <pre>Ans. A programming language is said to have First-class functions when functions in that language are treated like any other variable.
+     For example, in such a language, a function can be passed as an argument to other functions, can be returned by another 
+     function and can be assigned as a value to a variable.</pre>
+
+    <h5>6.What are closures? Give an example of closure</h5>
+    <pre>Ans. A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+     In other words, a closure gives you access to an outer function's scope from an inner function.</pre>
+
+
+    <h5>7.Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind()</h5>
+    <pre> * Call invokes the function and allows you to pass in arguments one by one.
+
+ * Apply invokes the function and allows you to pass in arguments as an array.
+
+ * Bind returns a new function, allowing you to pass in a this array and any number of arguments.
+
+  Example:(CALL) 
+-----------------
+           var person = {  
+           name: "James Smith",
+           hello: function(thing) {
+            console.log(this.name + " says hello " + thing);
+          }
+       }
+
+       person.hello("world");  // output: "James Smith says hello world"
+       person.hello.call({ name: "Jim Smith" }, "world"); // output: "Jim Smith says hello world"
+
+ Example:(APPLY)
+ ----------------               
+       function personContainer() {
+        var person = {  
+           name: "James Smith",
+           hello: function() {
+             console.log(this.name + " says hello " + arguments[1]);
+           }
+        }
+        person.hello.apply(person, arguments);
+      }
+      personContainer("world", "mars"); // output: "James Smith says hello mars", note: arguments[0] = "world" , arguments[1] = "mars" 
+      
+ Example:(APPLY)
+ ----------------
+
+      var person1 = {firstName: 'Jon', lastName: 'Kuperman'};
+      var person2 = {firstName: 'Kelly', lastName: 'King'};
+      
+      function say() {
+          console.log('Hello ' + this.firstName + ' ' + this.lastName);
+      }
+      
+      var sayHelloJon = say.bind(person1);
+      var sayHelloKelly = say.bind(person2);
+      
+      sayHelloJon(); // Hello Jon Kuperman
+      sayHelloKelly(); // Hello Kelly King
+</pre>
+</body>
+</html>
